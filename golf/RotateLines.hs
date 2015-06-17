@@ -1,3 +1,3 @@
 -- Under construction...
-f a = tail a ++ [head a]
+f (a:b) = b ++ [a]
 main = interact $ unlines.f.lines
