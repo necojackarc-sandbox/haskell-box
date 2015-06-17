@@ -1,2 +1,3 @@
 -- Under construction...
-main = fmap lines getContents >>= (\a -> putStrLn.unlines $ tail a ++ [head a])
+f a = tail a ++ [head a]
+main = interact $ unlines.f.lines
