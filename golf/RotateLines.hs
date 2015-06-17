@@ -1,6 +1,2 @@
 -- Under construction...
-
-main = do
-    c <- fmap lines getContents
-    putStr . unlines . tail $ c
-    putStrLn $ head c
+main = fmap lines getContents >>= (\a -> putStrLn.unlines $ tail a ++ [head a])
