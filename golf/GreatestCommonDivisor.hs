@@ -17,5 +17,8 @@
 -- (>>=) r (print . gcd x)
 -- (>>=) r . (.) print . gcd
 
-r = (readLn >>=)
-main = r $ r . (print .) . gcd
+-- r = (readLn >>=)
+-- main = r $ r . (print .) . gcd
+
+r=(readLn>>=)
+main=r$r.(print.).gcd
