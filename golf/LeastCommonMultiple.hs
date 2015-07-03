@@ -18,5 +18,10 @@
 -- m@main=getLine>>=print.l.map read.words>>m
 
 -- 色々試してみる
+-- l (x:y:_) = lcm x y
+-- main = (>>=) getLine ((.) print . (.) l $ (.) (map read) words) >> main
+
+
+-- (´Дﾓｳﾀﾞﾒﾎﾟ
 l (x:y:_) = lcm x y
-main = (>>=) getLine ((.) print . (.) l $ (.) (map read) words) >> main
+main = getLine >>= ((print .) . (.) l $ ((map read .) words) >> main
