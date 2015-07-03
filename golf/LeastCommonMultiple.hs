@@ -14,5 +14,9 @@
 -- main = getLine >>= print . lcm' . map read . words >> main
 
 -- この時点でのゴルフコード
-l(x:y:_)=lcm x y
-m@main=getLine>>=print.l.map read.words>>m
+-- l(x:y:_)=lcm x y
+-- m@main=getLine>>=print.l.map read.words>>m
+
+-- 色々試してみる
+l (x:y:_) = lcm x y
+main = (>>=) getLine ((.) print . (.) l $ (.) (map read) words) >> main
