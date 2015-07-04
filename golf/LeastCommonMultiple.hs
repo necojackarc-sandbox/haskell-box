@@ -21,7 +21,9 @@
 -- l (x:y:_) = lcm x y
 -- main = (>>=) getLine ((.) print . (.) l $ (.) (map read) words) >> main
 
+-- モウダメポ
+-- l (x:y:_) = lcm x y
+-- main = getLine >>= ((print .) . (.) l $ ((map read .) words) >> main
 
--- (´Дﾓｳﾀﾞﾒﾎﾟ
-l (x:y:_) = lcm x y
-main = getLine >>= ((print .) . (.) l $ ((map read .) words) >> main
+-- 畳み込んでみる
+main = getLine >>= print . foldl1 lcm . map read . words >> main
