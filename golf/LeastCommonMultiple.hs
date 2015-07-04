@@ -26,4 +26,10 @@
 -- main = getLine >>= ((print .) . (.) l $ ((map read .) words) >> main
 
 -- 畳み込んでみる
-main = getLine >>= print . foldl1 lcm . map read . words >> main
+-- main = getLine >>= print . foldl1 lcm . map read . words >> main
+
+-- 畳み込みながら read してみる
+-- main = getLine >>= print . foldr (lcm . read) 1. words >> main
+
+-- ゴルフしてみる
+m@main=getLine>>=print.foldr(lcm.read)1.words>>m
